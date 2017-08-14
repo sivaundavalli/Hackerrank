@@ -11,6 +11,14 @@ hooks:
     - location: start_server
       timeout: 300
       runas: root
+ permissions:
+   - object: /var/www/html
+     pattern: "**"
+     owner: apache
+     group: apache
+     mode: 755
+     type:
+       - file
   ApplicationStop:
     - location: stop_server
       timeout: 300
